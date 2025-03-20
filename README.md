@@ -3,8 +3,17 @@ MyBatis Generator Library for PostgreSQL
 
 ## PostgresJavaTypeResolver
 
-使い方
+`PostgresJavaTypeResolver`を使用することで、  
+PostgreSQLのtimestamp with time zone型をLocalDateTimeではなくOffsetDateTimeで生成します。
+
+Usage
 
 ```xml
-
+<generatorConfiguration>
+  <context ...>
+...
+    <javaTypeResolver type="net.leoninja.mybatis.generator.postgreslib.PostgresJavaTypeResolver">
+      <property name="useJSR310Types" value="true" />
+    </javaTypeResolver>
+...
 ```
